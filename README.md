@@ -1,8 +1,8 @@
 # 프로젝트 수행 기간
 2024.04 ~ 2024.05
-# URL 
+## URL 
 [http://54.180.249.100:8080/](http://54.180.249.100:8080/)
-# ERD 
+## ERD 
 [https://lucid.app/lucidchart/17731ed2-b6ae-4356-8d58-10d2d4f704cd/edit?](https://lucid.app/lucidchart/17731ed2-b6ae-4356-8d58-10d2d4f704cd/edit?)
 
 ### 게시판을 주제로 선정한 이유
