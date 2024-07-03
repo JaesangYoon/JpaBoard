@@ -71,17 +71,24 @@
 - QueryDsl을 활용해 동적 쿼리를 구현했습니다. 게시글의 제목과 작성자의 이름을 기준으로 검색할 수 있습니다.
 
 #### 7. 게시물 조회
+<img width="1154" alt="게시물 조회" src="https://github.com/JaesangYoon/jpaboard/assets/89953091/5feb203b-f0b0-44f6-9294-6dcf857b6a19">
+
 - 조회수, 댓글 수(답글 포함), 카테고리를 확인할 수 있습니다.
 - 각각의 댓글에는 답글을 달 수 있으며, 부모 댓글이 삭제되면 해당 댓글의 답글도 함께 삭제됩니다. 
 	- 이를 위해 Post(게시글) 엔티티의 comments 속성에 orphanRemoval 옵션을 true로 설정했습니다.
 - 자신이 작성한 게시글과 댓글에 대해서만 수정, 삭제 버튼이 보이도록 했습니다. 이를 위해 세션에 저장된 사용자 이름과 게시물 및 댓글 작성자 이름을 비교하는 방식을 사용했습니다.
 
 #### 8. 게시물 작성
+![게시물 작성](https://github.com/JaesangYoon/jpaboard/assets/89953091/33bedca1-232c-4766-9196-bd75d39eadd4)
+<img width="656" alt="게시물 작성_카테고리" src="https://github.com/JaesangYoon/jpaboard/assets/89953091/0cefa5db-4d1d-47fb-9285-24927f568e89">
+
 - Bean Validation을 이용하여 카테고리, 제목, 본문 내용에 대해 공백이나 Null을 허용하지 않도록 설계했습니다.
 - 게시물의 카테고리는 Enum을 이용하여 직접 정의했습니다.
 - PRG 패턴을 적용하여 폼이 중복 제출되는 것을 막았습니다.
 
 #### 9. 게시물 수정
+<img width="1282" alt="게시물 수정" src="https://github.com/JaesangYoon/jpaboard/assets/89953091/c27fbfa9-d3b1-4de0-9137-e753d871501f">
+
 - 게시물 작성과 동일하게 Bean Validation을 이용하여 폼을 검증했습니다.
 
 
