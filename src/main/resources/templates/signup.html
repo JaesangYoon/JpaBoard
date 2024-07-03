@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+<head>
+    <script src="/assets/js/color-modes.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Signup</title>
+    <style>
+        .field-error {
+            color: red;
+            font-size: 0.8em;
+        }
+    </style>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/css/login.css" rel="stylesheet">
+</head>
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
+
+<main class="form-signin w-100 m-auto">
+    <form th:action th:object="${signupForm}" method="post" >
+        <img class="mb-4" src="/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+        <h1 class="h3 mb-3 fw-normal">회원가입</h1>
+
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingEmail" th:field="*{email}" th:errorclass="field-error" placeholder="name@example.com">
+            <div class="field-error" th:errors="*{email}">이메일 오류</div>
+            <label for="floatingEmail">이메일 주소</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPassword" th:field="*{password}" th:errorclass="field-error" placeholder="secretpwd">
+            <div class="field-error" th:errors="*{password}">비밀번호 오류</div>
+            <label for="floatingPassword">비밀번호</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingName" th:field="*{name}" th:errorclass="field-error" placeholder="Full Name">
+            <div class="field-error" th:errors="*{name}">이름 오류</div>
+            <label for="floatingName">이름</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingCity" th:field="*{address.city}" th:errorclass="field-error" placeholder="City">
+            <div class="field-error" th:errors="*{address.city}">도시 오류</div>
+            <label for="floatingCity">도시</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingStreet" th:field="*{address.street}" th:errorclass="field-error" placeholder="Street">
+            <div class="field-error" th:errors="*{address.street}">도로명 오류</div>
+            <label for="floatingStreet">도로명</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingZipcode" th:field="*{address.zipcode}" th:errorclass="field-error" placeholder="Zip Code">
+            <div class="field-error" th:errors="*{address.zipcode}">우편번호 오류</div>
+            <label for="floatingZipcode">우편번호</label>
+        </div>
+        <button class="btn btn-primary w-100 py-2" type="submit">가입</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2024 Jaesang Yoon</p>
+    </form>
+</main>
+
+<script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

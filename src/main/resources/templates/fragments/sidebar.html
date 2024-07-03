@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:fragment="sidebar" class="col-lg-3">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-12">
+<!--                <h6 class="mb-3" th:if="${member}" th:text="|로그인: ${member.name}|">로그인 사용자 이름</h6>-->
+                <h6 class="mb-3" th:if="${session.loginMember}" th:text="|로그인: ${session.loginMember.name}|">로그인 사용자 이름</h6>
+                <form th:if="${session.loginMember}" th:action="@{/login/logout}" method="post">
+                    <input type="hidden" name="redirectLogout" th:value="${currentPageUrl}">
+                    <button class="w-100 btn btn-secondary btn-lg" type="submit" th:text="로그아웃">
+                        로그아웃
+                    </button>
+                </form>
+
+                <form th:action="@{/login/login}" method="get">
+                    <input type="hidden" name="redirectLogin" th:value="${currentPageUrl}">  <!-- 현재 페이지 URL -->
+                    <button th:unless="${session.loginMember}"
+                            class="w-100 btn btn-primary btn-lg"
+                            th:text="로그인"
+                            type="submit">
+                        로그인
+                    </button>
+                </form>
+            </div>
+
+
+        </div>
+        <div class="row justify-content-between">
+            <div class="col-6">
+                <button class="w-100 btn btn-outline-secondary" th:onclick="|location.href='@{/member/signup}'|">회원가입
+                </button>
+            </div>
+            <div class="col-6 text-end">
+                <button class="w-100 btn btn-outline-secondary" th:onclick="|location.href='@{/member/find}'|">계정찾기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

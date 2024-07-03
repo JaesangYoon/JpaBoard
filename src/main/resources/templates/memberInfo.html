@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+<head>
+    <script src="/assets/js/color-modes.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Member Information</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/login.css" rel="stylesheet">
+</head>
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
+
+<main class="form-signin w-100 m-auto">
+    <img class="mb-4" src="/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+    <h1 class="h3 mb-3 fw-normal">회원 정보</h1>
+
+    <div class="card">
+        <div class="card-body">
+            <p><strong>이메일:</strong> <span th:text="${findMember.email}">[Email]</span></p>
+            <p><strong>이름:</strong> <span th:text="${findMember.name}">[Name]</span></p>
+            <p><strong>도시:</strong> <span th:text="${findMember.address.city}">[City]</span></p>
+            <p><strong>도로명:</strong> <span th:text="${findMember.address.street}">[Street]</span></p>
+            <p><strong>우편번호:</strong> <span th:text="${findMember.address.zipcode}">[Zipcode]</span></p>
+<!--            <p><strong>작성 글:</strong> <span th:text="${findMember.posts}">[Posts]</span></p>-->
+<!--            <strong>작성 글 (제목만):</strong>-->
+<!--            <ul>-->
+<!--                <li th:each="post : ${findMember.posts}">-->
+<!--                    <span th:text="${post.title}">[Title]</span>-->
+<!--                </li>-->
+<!--            </ul>-->
+
+
+        </div>
+    </div>
+    <a href="/" class="btn btn-primary w-100 mt-3 home-btn">홈</a>
+<!--    <p class="mt-5 mb-3 text-muted">&copy; 2024 Jaesang Yoon</p>-->
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</main>
+
+<script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
