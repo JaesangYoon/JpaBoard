@@ -21,11 +21,16 @@
 ![screencapture-54-180-249-100-8080-2024-07-03-21_51_50](https://github.com/JaesangYoon/jpaboard/assets/89953091/eb24139a-2684-4a2e-90e3-6d1944e25638)
 
 **로그인 하지 않은 메인 페이지**
+![홈](https://github.com/JaesangYoon/jpaboard/assets/89953091/7b47bdf3-f3c2-499e-89bc-baa7de48de8b)
+
+
 - 로그인 여부에 따라 다른 뷰를 제공했습니다.
 - 컨트롤러에서 세션 객체가 비어있는지를 확인하여 로그인 여부를 판단하도록 했습니다.
-![홈_로그인](https://github.com/JaesangYoon/jpaboard/assets/89953091/b918f375-7d62-496b-b77c-f26a1631a443)
+
 
 **로그인 했을 때의 메인 페이지**
+
+![홈_로그인](https://github.com/JaesangYoon/jpaboard/assets/89953091/b918f375-7d62-496b-b77c-f26a1631a443)
 - 세션 객체에 저장된 회원의 이름을 출력하도록 했습니다.
 - 로그인 했을 때는, 로그인 한 회원의 정보를 조회하는 ‘회원 정보’ 탭을 출력하도록 했습니다.
 
