@@ -1,4 +1,4 @@
-# 📌 JpaBoard Project 📌
+# JpaBoard Project 📌
 
 ## 프로젝트 수행 기간
 2024.04 ~ 2024.05
