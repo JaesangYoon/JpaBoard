@@ -18,7 +18,8 @@
 
 ### 기능 설명
 #### 1. 메인 페이지
-<img width="989" alt="스크린샷 2024-07-03 오후 9 46 44" src="https://github.com/JaesangYoon/jpaboard/assets/89953091/5c82afd4-6cc1-424e-90fe-1cb3c21e9c6b">
+![screencapture-54-180-249-100-8080-2024-07-03-21_51_50](https://github.com/JaesangYoon/jpaboard/assets/89953091/eb24139a-2684-4a2e-90e3-6d1944e25638)
+
 
 
 **로그인 하지 않은 메인 페이지**
