@@ -18,6 +18,7 @@
 
 ### 기능 설명
 #### 1. 메인 페이지
+<img width="989" alt="스크린샷 2024-07-03 오후 9 46 44" src="https://github.com/JaesangYoon/jpaboard/assets/89953091/5c82afd4-6cc1-424e-90fe-1cb3c21e9c6b">
 
 
 **로그인 하지 않은 메인 페이지**
@@ -50,7 +51,7 @@
 - 테스트용 계정의 비밀번호를 찾은 예시입니다.
 
 #### 6. 게시판 홈
-[홈.pdf](https://github.com/user-attachments/files/16085060/default.pdf)
+
 
 - 게시판의 sidebar, footer, header는 타임리프의 모듈화 기능을 사용하여 통일성 있게 제작하였습니다. 이를 통해 공통 UI 요소를 재활용하고, 코드의 유지 보수를 용이하게 했습니다.
 - 테스트 데이터를 300개 추가하여 페이지네이션이 정상적으로 작동하는지 확인할 수 있도록 했습니다.
