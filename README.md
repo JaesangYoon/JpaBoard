@@ -21,6 +21,7 @@
 ![screencapture-54-180-249-100-8080-2024-07-03-21_51_50](https://github.com/JaesangYoon/jpaboard/assets/89953091/eb24139a-2684-4a2e-90e3-6d1944e25638)
 
 **1-1. 로그인 하지 않은 메인 페이지**
+
 ![홈](https://github.com/JaesangYoon/jpaboard/assets/89953091/7b47bdf3-f3c2-499e-89bc-baa7de48de8b)
 
 
@@ -29,6 +30,7 @@
 
 
 **1-2. 로그인 했을 때의 메인 페이지**
+
 ![홈_로그인](https://github.com/JaesangYoon/jpaboard/assets/89953091/b918f375-7d62-496b-b77c-f26a1631a443)
 
 - 세션 객체에 저장된 회원의 이름을 출력하도록 했습니다.
