@@ -5,7 +5,7 @@
 ## URL 
 [http://54.180.249.100:8080/](http://54.180.249.100:8080/)
 ## ERD 
-[jpaboard_domain model.pdf](https://github.com/user-attachments/files/16611491/jpaboard_domain.model.pdf)
+![jpaboard-2](https://github.com/user-attachments/assets/ae1ffb87-6703-4f03-9ec7-fe4c98029c8b)
 
 ## 게시판을 주제로 선정한 이유
 
