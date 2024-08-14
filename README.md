@@ -5,7 +5,7 @@
 ## URL 
 [http://54.180.249.100:8080/](http://54.180.249.100:8080/)
 ## ERD 
-[https://lucid.app/lucidchart/17731ed2-b6ae-4356-8d58-10d2d4f704cd/edit?](https://lucid.app/lucidchart/17731ed2-b6ae-4356-8d58-10d2d4f704cd/edit?)
+[jpaboard_domain model.pdf](https://github.com/user-attachments/files/16611491/jpaboard_domain.model.pdf)
 
 ## 게시판을 주제로 선정한 이유
 
