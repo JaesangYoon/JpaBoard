@@ -58,7 +58,7 @@ public class TestDataInit {
     public void postInit() {
         LocalDateTime startTime = LocalDateTime.now().minusMonths(1); // 현재로부터 1달 전
 
-        for (int i = 1; i <= 300; i++) {
+        for (int i = 1; i <= 50; i++) {
 
             PostForm postForm = new PostForm();
             String testContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum elit tellus, et condimentum nisl scelerisque nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis enim diam, luctus eu mollis vitae, volutpat et nibh. Vestibulum nulla felis, mollis non condimentum quis, pellentesque at eros. Mauris suscipit pulvinar posuere. Duis vestibulum sodales tempor. Donec venenatis pulvinar rhoncus. Etiam turpis mi, rutrum eget euismod sed, sodales sit amet felis. Duis ut erat quis velit accumsan convallis sed sit amet lorem.\n" +
@@ -116,7 +116,7 @@ public class TestDataInit {
         LocalDateTime now = LocalDateTime.now();
 
         Member testMember = memberRepository.findById(1L);
-        for (Long i = 1L; i <= 300L; i++) {
+        for (Long i = 1L; i <= 50L; i++) {
             Optional<Post> byId = boardRepository.findById(i);
             Post findPost = byId.get();
             Comment testComment = new Comment();
