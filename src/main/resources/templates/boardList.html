@@ -68,9 +68,10 @@
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <div>
                     <!-- 현재 페이지와 전체 게시물 수를 보여주는 섹션 -->
-                    <span th:text="|전체 ${page.totalElements} / |">전체 51,124/ </span>
+                    <span>전체 <strong th:text="${page.totalElements}">51,124</strong> / </span>
                     <span th:text="|${page.number + 1} 페이지|">1 페이지</span>
                 </div>
+
                 <div>
                     <!-- 검색 폼 -->
                     <form th:action="@{/post/search}" method="get" class="form-inline d-flex">

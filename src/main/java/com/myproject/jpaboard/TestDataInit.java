@@ -6,10 +6,10 @@ import com.myproject.jpaboard.web.form.PostForm;
 import com.myproject.jpaboard.web.repository.BoardRepository;
 import com.myproject.jpaboard.web.repository.MemberRepository;
 import com.myproject.jpaboard.web.repository.PostJpaRepository;
-import com.myproject.jpaboard.web.service.BoardService;
 import com.myproject.jpaboard.web.service.MemberService;
 import com.myproject.jpaboard.web.service.PostService;
 import lombok.RequiredArgsConstructor;
+import net.datafaker.Faker;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.event.EventListener;
@@ -17,6 +17,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.Locale;
 import java.util.Optional;
 
 @Component
@@ -29,6 +30,7 @@ public class TestDataInit {
     private final BoardRepository boardRepository;
     private final PostJpaRepository postJpaRepository;
     private final PostService postService;
+    private final Faker faker = new Faker(new Locale("ko")); // 한국어 데이터 생성을 위해 로케일 설정
 
 
     @EventListener(ApplicationReadyEvent.class)
@@ -48,8 +50,21 @@ public class TestDataInit {
         member.setPassword("1234");
         member.setName("Max");
         member.setAddress(new Address("Seoul", "Gangnam", "12345"));
-
         memberService.join(member);
+
+//        for (int i = 0; i < 10; i++) {  // 10명의 회원 데이터를 생성한다고 가정
+//            Member member2 = new Member();
+//            member2.setEmail(faker.internet().emailAddress());
+//            member2.setPassword(faker.internet().password());
+//            member2.setName(faker.name().fullName());
+//            member2.setAddress(new Address(
+//                    faker.address().city(),
+//                    faker.address().streetName(),
+//                    faker.address().zipCode()
+//            ));
+//            memberService.join(member2);
+//        }
+
     }
 
     /**
@@ -58,24 +73,19 @@ public class TestDataInit {
     public void postInit() {
         LocalDateTime startTime = LocalDateTime.now().minusMonths(1); // 현재로부터 1달 전
 
-        for (int i = 1; i <= 50; i++) {
-
+        for (int i = 1; i <= 20; i++) {
             PostForm postForm = new PostForm();
-            String testContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi condimentum elit tellus, et condimentum nisl scelerisque nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis enim diam, luctus eu mollis vitae, volutpat et nibh. Vestibulum nulla felis, mollis non condimentum quis, pellentesque at eros. Mauris suscipit pulvinar posuere. Duis vestibulum sodales tempor. Donec venenatis pulvinar rhoncus. Etiam turpis mi, rutrum eget euismod sed, sodales sit amet felis. Duis ut erat quis velit accumsan convallis sed sit amet lorem.\n" +
-                    "\n" +
-                    "Integer pellentesque tristique nulla suscipit accumsan. Sed dapibus dolor ac lacus iaculis, a dignissim leo suscipit. Fusce sit amet massa ut justo tincidunt efficitur eget varius urna. Sed eget risus dapibus, vestibulum est nec, volutpat tellus. Nulla et porttitor dolor. Duis cursus, dolor ut fermentum efficitur, risus nisi luctus neque, sed tristique ex lectus non massa. Fusce malesuada elementum purus, vitae lacinia ante porttitor et. In aliquet turpis in neque sagittis, quis malesuada risus semper. Vestibulum viverra nisi sem, non tincidunt sem scelerisque sit amet.\n" +
-                    "\n" +
-                    "Etiam eget luctus velit, vitae consequat neque. Nulla facilisi. Sed finibus dui odio, vitae molestie lacus convallis non. Vestibulum rhoncus ac ipsum faucibus dignissim. Ut in metus quis sapien ultrices iaculis a non orci. Mauris placerat leo in nisi sodales auctor. In vel turpis sagittis, laoreet nibh at, tempor risus. Integer porttitor tempor pulvinar. Morbi pharetra congue lorem. Vivamus sagittis mi et sodales maximus. Maecenas tristique fringilla urna vel tincidunt. Sed hendrerit nisl nec condimentum vestibulum.\n" +
-                    "\n" +
-                    "Vestibulum ut diam laoreet, fermentum velit eget, fermentum massa. Integer eu arcu facilisis, vehicula tellus et, consequat orci. Curabitur id suscipit neque, et feugiat felis. Vestibulum dui elit, auctor vitae vehicula sit amet, egestas in dolor. Sed id porta odio. Etiam cursus, orci at vulputate porta, metus quam scelerisque enim, eget rutrum lectus enim non neque. Fusce consequat tempus augue, a vulputate turpis bibendum ut. Nulla non lorem feugiat, posuere lacus lobortis, posuere eros. Nullam gravida ac nibh in vestibulum. Morbi eu lacus eget sem placerat vulputate elementum sodales ipsum. Nam egestas id quam sed aliquam. Nunc fringilla ac quam ac sodales. Etiam quis ligula vel massa bibendum eleifend. Proin tempus pulvinar diam, et pulvinar neque vestibulum ac.\n" +
-                    "\n" +
-                    "Cras feugiat orci a magna scelerisque porta. Praesent feugiat elit vel urna molestie, at volutpat dolor pretium. Suspendisse imperdiet eget risus ut blandit. Vivamus fermentum nunc vitae ipsum eleifend tincidunt. Quisque dictum congue elit, in suscipit diam tincidunt a. Phasellus luctus posuere leo eu mattis. Nunc congue condimentum odio, convallis tristique justo venenatis a. Proin in nunc sed est luctus ultricies. Ut fringilla augue at urna posuere, at facilisis est vulputate. Donec dictum erat ut suscipit pulvinar. Sed viverra consectetur massa, non interdum orci mollis ac. Vivamus bibendum tortor blandit tincidunt mollis. Vivamus varius vitae nibh vitae cursus. Morbi nisl dolor, maximus nec tincidunt eu, venenatis nec quam.";
+
+            // Faker를 사용하여 무작위 한국어 텍스트 생성
+            String testContent = faker.lorem().paragraph(5); // Faker가 5개의 문장으로 구성된 무작위 한국어 문단을 생성
+
             postForm.setTitle(i + "번째 게시물입니다.");
             postForm.setContent(testContent);
             postForm.setWriter("홍길동" + i);
             postForm.setCreatedTime(startTime.plusHours(i));
             postForm.setCategory(CategoryType.DAILY);
             postForm.setViewCount(0L);
+
             Member testMember = memberRepository.findById(1L);
 
             MemberSessionDto memberSessionDto = new MemberSessionDto();
@@ -87,6 +97,7 @@ public class TestDataInit {
             postService.addPost(postForm, memberSessionDto);
         }
 
+        // Max 계정 Post
         LocalDateTime writtenTime = LocalDateTime.now();
         Member testMember = memberRepository.findById(1L);
 
@@ -103,7 +114,6 @@ public class TestDataInit {
         memberSessionDto.setName(testMember.getName());
         memberSessionDto.setEmail("jsangyoun@gmail.com");
 
-
         postService.addPost(postForm2, memberSessionDto);
     }
 
@@ -116,7 +126,7 @@ public class TestDataInit {
         LocalDateTime now = LocalDateTime.now();
 
         Member testMember = memberRepository.findById(1L);
-        for (Long i = 1L; i <= 50L; i++) {
+        for (Long i = 1L; i <= 20L; i++) {
             Optional<Post> byId = boardRepository.findById(i);
             Post findPost = byId.get();
             Comment testComment = new Comment();

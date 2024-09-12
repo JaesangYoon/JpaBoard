@@ -48,8 +48,6 @@ public class LoginService {
         } else {
             return true;  // 로그인 성공 시 해당 Member 반환
         }
-
-
     }
 
     public MemberSessionDto findByLoginEmail(String email) {

@@ -1,10 +1,8 @@
 package com.myproject.jpaboard.web.controller;
 
-import com.myproject.jpaboard.domain.Member;
 import com.myproject.jpaboard.domain.MemberSessionDto;
 import com.myproject.jpaboard.web.SessionConst;
 import com.myproject.jpaboard.web.form.LoginForm;
-import com.myproject.jpaboard.web.repository.MemberRepository;
 import com.myproject.jpaboard.web.service.LoginService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;

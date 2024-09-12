@@ -3,7 +3,7 @@
 ## 프로젝트 수행 기간
 2024.04 ~ 2024.05
 ## URL 
-[http://54.180.249.100:8080/](http://54.180.249.100:8080/)
+[http://3.35.238.216:8080/](http://3.35.238.216:8080/)
 ## ERD 
 ![jpaboard-2](https://github.com/user-attachments/assets/ae1ffb87-6703-4f03-9ec7-fe4c98029c8b)
 

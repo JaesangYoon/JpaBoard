@@ -72,7 +72,6 @@ public class MemberController {
         }
 
         model.addAttribute("findMember", findMember);
-
         String findMemberEmail = findMember.getEmail();
 
         return "memberInfo";
