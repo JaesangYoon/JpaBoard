@@ -117,7 +117,6 @@ public class TestDataInit {
         postService.addPost(postForm2, memberSessionDto);
     }
 
-
     /**
      * 댓글 테스트 데이터
      */
